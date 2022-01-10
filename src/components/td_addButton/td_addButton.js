@@ -4,7 +4,7 @@ import "./td_addButton.css"
 
 function AddButton() {
     return (
-        <Container>
+        <Container className='buttonContainer'>
         <Row>
           <Col className="d-flex justify-content-center align-items-center"><Button className='myButton'>+</Button></Col>
         </Row>

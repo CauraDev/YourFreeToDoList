@@ -8,7 +8,8 @@ function Title() {
     return (
         <Container>
         <Row>
-          <Col><h1 className="text-center todoTitle">ToDo List</h1></Col>
+          <Col><h2 className="text-center todoTitle">Your <span className="titleSpan">free </span>
+           <span className='titleSpan2'> To do List</span></h2></Col>
         </Row>
       </Container>
     )

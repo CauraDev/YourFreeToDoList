@@ -9,6 +9,22 @@ function MainList() {
         <ListComponent />
         <ListComponent />
         <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
+        <ListComponent />
 </ListGroup>    )
 }
 
