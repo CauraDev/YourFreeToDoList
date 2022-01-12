@@ -5,17 +5,25 @@ import './td_form.css'
 
 function TextForm({showForm, change}) {
 
-    const submitChange = e => (
-        e.preventDefault(),
-        change()                        //////////////////// IT WORKS WITH PARENTHESIS BECAUSE I'M CALLING THE ACTUAL FUNCTION, NOT IT'S REFERENCE
-    )
+
+
+    const addTask = e => {
+      e.preventDefault();
+      change();
+
+
+    }
 
   return (
 
-        showForm ? <Form className='mainForm rounded' onSubmit={submitChange}>
+        !showForm ? 
+
+        <div className="formDiv">
+
+        <Form className='mainForm rounded' onSubmit={addTask}>
         <Form.Group className="mb-3" controlId="tdText">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="TESTMODE" />
+          <Form.Label>New Task</Form.Label>
+          <Form.Control type="text" placeholder="TESTMODE" />
         </Form.Group>
       
         <Button variant="primary" type="submit" size='sm' >
@@ -23,6 +31,8 @@ function TextForm({showForm, change}) {
         </Button>
       </Form>
       
+      </div>
+
       : null
 
 

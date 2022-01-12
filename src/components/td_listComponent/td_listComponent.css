@@ -1,4 +1,35 @@
-.listStack {
-    margin: 1% 20%;
-    padding: 0.5%;
+
+
+
+/* USE THIS PROPERTY TO CHANGE THE COLOR AND FONT SIZE OF EACH SPAN'S TEXT */
+.taskSpan {
+    font-size: 100%;
 }
+/* @media only screen and (max-width: 992px) {
+    .taskSpan {
+        font-size: 90%;
+    }
+} */
+
+/* USE THIS PROPERTY TO MODIFY THE SPACING BETWEEN EACH TASK */
+.listItemContainer {
+    margin: 2.5% 0%; 
+    background-color: rgba(255, 255, 255 , 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+/* USE THESE PROPERTIES TO MODIFY THE GRAY MARGIN SURROUNDING EACH TASK */
+.spanContainer {
+    margin: 2.5% 0%;
+}
+
+.list_ButtonContainer {
+    margin: 2.5% 0%;
+    display: flex; justify-content: space-around; align-items: center; 
+}
+
+

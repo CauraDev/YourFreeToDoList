@@ -6,11 +6,11 @@ function AddButton({change, showButton}) {
 
     return (
 
-        !showButton ? 
+        showButton ? 
         
         <Container className='buttonContainer'>
         <Row>
-          <Col className="d-flex justify-content-center align-items-center"><Button onClick={change} className='myButton'>+</Button></Col>
+          <Col className="d-flex justify-content-center align-items-center"><Button onClick={change} className='myButton' size='sm'>+</Button></Col>
         </Row>
       </Container>
 

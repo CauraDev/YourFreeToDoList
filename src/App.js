@@ -11,19 +11,35 @@ function App() {
 
  // STATES
   const [editMode, setEditMode] = useState([]);
-  const [activeState, setActiveState] = useState(true);
+  const [showForm, setShowForm] = useState(true);
+  const [availableTasks, setAvailable] = useState([]);
+
 
 // FUNCTIONS
-function changeActiveState() {
-  setActiveState(!activeState);
+function changeShowForm() {
+  setShowForm(!showForm);
 }
+
+// function changeAvailableTasks() {
+//   setAvailableTasks(
+//     [...availableTasks, {
+
+//     }]
+//   )
+// }
+
 
   return (
     <div className="App">
       <Title />
-      <MainList />
-      <TextForm showForm={activeState} change={changeActiveState}/>
-      <AddButton showButton={activeState} change={changeActiveState}/>
+
+      <div className="containerDiv">
+      <MainList activateClick={showForm} />
+      <AddButton showButton={showForm} change={changeShowForm}/>
+      </div>
+
+      <TextForm showForm={showForm} change={changeShowForm}/>
+
     </div>
   );
 }

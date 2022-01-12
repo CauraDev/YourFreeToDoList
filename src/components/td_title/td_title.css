@@ -1,6 +1,6 @@
 .todoTitle {
-    font-size: 4vw;
-    color: #0A05A0;
+    font-size: 300%;
+    color: white;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -10,5 +10,5 @@
 }
 
 .titleSpan2 {
-    color: #140CF7;
+    color: white;
 }

@@ -1,22 +1,46 @@
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import Stack from 'react-bootstrap/Stack';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import "./td_listComponent.css";
 
 
-function ListComponent({props}) {
+function ListComponent({props, allowSpan}) {
     return (
 
+        // <div className='listComponentDiv'>
+        // <Stack direction='horizontal' gap={5} className='listStack'>
 
-        <Stack direction='horizontal' gap={3} className='listStack'>
+        //     <div>
+        //     <span contentEditable={`${allowSpan ? "true" : "false"}`} className="taskSpan bg-transparent " >{props.text}</span>
+        //     </div>
 
-            <span className="bg-transparent text-white-50" >{props.text}</span>
-            <Button variant="outline-danger" className='ms-auto'>Delete</Button>
-            <Button variant="outline-warning"  >Edit</Button>
-            <Button variant="outline-success" size='small' >Complete</Button>
+        //     <Stack direction='horizontal' gap={3}>
+        //         <Button variant="outline-danger" className ='ms-auto' size='sm'>X</Button>
+        //         <Button variant="outline-success" className ='ms-auto' size='sm' >C</Button>
 
+        //     </Stack>
 
-        </Stack>
+        // </Stack>
+        // </div>
+        <Container fluid="xs">
+        <Row className="listItemContainer">
+            <Col md={10} sm={9} xs={8} className="spanContainer">
+                <span contentEditable={`${allowSpan ? "true" : "false"}`} className="taskSpan bg-transparent text-white-50 ">
+                    {props.text}
+                </span>
+
+            </Col>
+            <Col md={2} sm={3} xs={4} className='list_ButtonContainer'>
+                
+                    <Button variant='success' size='sm'>C</Button>
+                    <Button variant='danger' size='sm'>X</Button>
+                
+            </Col>
+         </Row>
+        </Container>
+
 
     )
 }

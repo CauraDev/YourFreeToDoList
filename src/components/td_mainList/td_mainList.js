@@ -2,22 +2,28 @@ import React, {useState} from 'react';
 
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListComponent from "../td_listComponent/td_listComponent.js";
+import "./td_mainList.css"
+
+function MainList({activateClick}) {
 
 
-function MainList() {
-
-
-    const [taskList, setTaskList] = useState([]);
+    const [taskList, setTaskList] = useState([
+        {id: 1, text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+        {id: 2, text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+        {id: 3, text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    ]);
 
     return (
-
-        <ListGroup>
-            {taskList.map(
-                (value) => (
-                    <ListComponent props={value} />
-                )
-            )}
-        </ListGroup>
+           <div className={`listContainer ${!activateClick ? "blockClick" : "" }`}> 
+           
+           <ListGroup >
+                {taskList.map(
+                 (value) => (
+                    <ListComponent allowSpan={activateClick} props={value} />
+                    )
+                )}
+            </ListGroup>
+            </div>
 )
 
 }
