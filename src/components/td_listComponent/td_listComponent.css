@@ -4,6 +4,7 @@
 /* USE THIS PROPERTY TO CHANGE THE COLOR AND FONT SIZE OF EACH SPAN'S TEXT */
 .taskSpan {
     font-size: 100%;
+    padding-left: 3%;
 }
 /* @media only screen and (max-width: 992px) {
     .taskSpan {
@@ -32,4 +33,15 @@
     display: flex; justify-content: space-around; align-items: center; 
 }
 
+.taskButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.taskButton:hover {
+    background-color: white;
+    color: #121212;
+    border: white;
+}
 

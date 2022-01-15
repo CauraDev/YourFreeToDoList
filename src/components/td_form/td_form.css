@@ -1,12 +1,58 @@
-.mainForm {
-}
-
-.formDiv{
-    background-color: white;
-    border: 1px solid white;
+.formContainer{
+    background-color: #121212;
+    /* border: 1px solid white; */
+    width: 20%;
+    height: 13%;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     
 }
+
+.formLabel {
+    color: white;
+}
+.groupForm {
+    border: none;
+    outline: none;
+    margin: 0px;
+}
+
+.inputForm {
+    background-color: #121212;
+    outline: none;
+    border: none;
+    margin: 2% 0% 0% 0%;
+    border-radius: 0px;
+    border-bottom: 1px solid white;
+    }
+
+.inputForm:focus {
+    background: #121212;
+    outline: none;
+    color: white;
+    box-shadow: none;
+    border-bottom: 1px solid white;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .formContainer {
+        width: 40%;
+        align-items: stretch;
+    }
+    .inputForm{
+        width: 90%;
+    }
+
+
+}
+
+@media only screen and (max-width: 576px) {
+    .formContainer {
+        width: 70%;
+    }
+}
+
+

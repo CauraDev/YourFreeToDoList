@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import "./td_listComponent.css";
-
+import { FaTrashAlt, FaRegThumbsUp } from 'react-icons/fa';
 
 function ListComponent({props, allowSpan}) {
     return (
@@ -24,6 +24,7 @@ function ListComponent({props, allowSpan}) {
 
         // </Stack>
         // </div>
+
         <Container fluid="xs">
         <Row className="listItemContainer">
             <Col md={10} sm={9} xs={8} className="spanContainer">
@@ -34,8 +35,8 @@ function ListComponent({props, allowSpan}) {
             </Col>
             <Col md={2} sm={3} xs={4} className='list_ButtonContainer'>
                 
-                    <Button variant='success' size='sm'>C</Button>
-                    <Button variant='danger' size='sm'>X</Button>
+                    <Button className='taskButton' size='sm'><FaRegThumbsUp /></Button>
+                    <Button className='taskButton' size='sm'><FaTrashAlt /></Button>
                 
             </Col>
          </Row>

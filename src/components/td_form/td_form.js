@@ -1,5 +1,8 @@
 import React from 'react'
 import {Form, Button} from 'react-bootstrap'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import './td_form.css'
 
 
@@ -14,24 +17,39 @@ function TextForm({showForm, change}) {
 
     }
 
+    
+
   return (
 
         !showForm ? 
-
-        <div className="formDiv">
-
-        <Form className='mainForm rounded' onSubmit={addTask}>
-        <Form.Group className="mb-3" controlId="tdText">
-          <Form.Label>New Task</Form.Label>
-          <Form.Control type="text" placeholder="TESTMODE" />
+<Form className='mainForm' onSubmit={addTask}>
+        <Container className='formContainer' fluid="xs">
+          <Row className='justify-content-center'>
+          <Col md={11} sm={10} xs={10}>
+          <Form.Group className="mb-3 groupForm" controlId="tdText">
+          <Form.Control className="inputForm" type="text" placeholder="New Task" />
         </Form.Group>
-      
-        <Button variant="primary" type="submit" size='sm' >
+
+          </Col>
+          </Row>
+
+
+          <Row className='justify-content-center'>
+            <Col md={4} sm={4} xs={4}>
+            <Button type="submit" className='taskButton' size='sm' >
           Submit
         </Button>
-      </Form>
-      
-      </div>
+
+          </Col>
+            <Col md={4} sm={4} xs={4}>
+            <Button className='taskButton' size='sm' onClick={change} >
+          Cancel
+        </Button>
+
+          </Col>
+          </Row>
+        </Container>
+              </Form>
 
       : null
 
@@ -39,5 +57,17 @@ function TextForm({showForm, change}) {
     );
 }   
 
-
+{/* <Form className='mainForm' onSubmit={addTask}>
+        <Form.Group className="mb-3 groupForm" controlId="tdText">
+          <Form.Control className="inputForm" type="text" placeholder="New Task" />
+        </Form.Group>
+      
+        <Button type="submit" className='formButton' size='sm' >
+          Submit
+        </Button>
+        <Button className='formButton' size='sm' onClick={change} >
+          Cancel
+        </Button>
+      </Form>
+ */}
 export default TextForm
