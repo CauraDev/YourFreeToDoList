@@ -28,7 +28,9 @@ function ListComponent({props, allowSpan}) {
         <Container fluid="xs">
         <Row className="listItemContainer">
             <Col md={10} sm={9} xs={8} className="spanContainer">
-                <span contentEditable={`${allowSpan ? "true" : "false"}`} className="taskSpan bg-transparent text-white-50 ">
+                
+                <span contentEditable={`${allowSpan ? "true" : "false"}`} suppressContentEditableWarning= "true"
+                 className="taskSpan bg-transparent text-white-50 ">
                     {props.text}
                 </span>
 

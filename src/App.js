@@ -1,5 +1,5 @@
 import Title from "./components/td_title/td_title.js";
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import MainList from "./components/td_mainList/td_mainList.js";
 import AddButton from "./components/td_addButton/td_addButton.js";
 import TextForm from './components/td_form/td_form.js'
@@ -12,7 +12,7 @@ function App() {
  // STATES
   const [editMode, setEditMode] = useState([]);
   const [showForm, setShowForm] = useState(true);
-  const [availableTasks, setAvailable] = useState([]);
+  const [availableTasks, setAvailableTasks] = useState([]);
 
 
 // FUNCTIONS
@@ -20,13 +20,13 @@ function changeShowForm() {
   setShowForm(!showForm);
 }
 
-// function changeAvailableTasks() {
-//   setAvailableTasks(
-//     [...availableTasks, {
+ const updateTasks = (taskId, taskText) => {
 
-//     }]
-//   )
-// }
+   setAvailableTasks([...availableTasks, {id: taskId, text: taskText
+  }]);
+  console.log(availableTasks);
+ }
+
 
 
   return (
@@ -34,14 +34,14 @@ function changeShowForm() {
       <Title />
 
       <div className="containerDiv">
-      <MainList activateClick={showForm} />
+      <MainList activateClick={showForm} availableTasks={availableTasks} />
       <AddButton showButton={showForm} change={changeShowForm}/>
       </div>
 
-      <TextForm showForm={showForm} change={changeShowForm}/>
+      <TextForm showForm={showForm} change={changeShowForm} updateTasks={updateTasks}/>
 
     </div>
   );
-}
 
+}
 export default App;
