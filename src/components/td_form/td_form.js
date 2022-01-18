@@ -19,16 +19,16 @@ function TextForm({showForm, change, updateTasks}) {
       e.preventDefault();
 
       updateTasks(uuidv4(), taskInput);
-      // updateTasks(Math.floor(Math.random()*100), taskInput);
       setTaskInput("");
       change();
     }
 
-
+    
 
     // EVENT LISTENER FOR INPUT    
     function onInputChange(e) {
       setTaskInput(e.target.value);
+
     }
     // APPLY ON BLANK INPUT
     const formChange = e => {
@@ -77,17 +77,4 @@ function TextForm({showForm, change, updateTasks}) {
     );
 } 
 
-{/* <Form className='mainForm' onSubmit={addTask}>
-        <Form.Group className="mb-3 groupForm" controlId="tdText">
-          <Form.Control className="inputForm" type="text" placeholder="New Task" />
-        </Form.Group>
-      
-        <Button type="submit" className='formButton' size='sm' >
-          Submit
-        </Button>
-        <Button className='formButton' size='sm' onClick={change} >
-          Cancel
-        </Button>
-      </Form>
- */}
 export default TextForm

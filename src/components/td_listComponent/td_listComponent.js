@@ -6,39 +6,31 @@ import Col from 'react-bootstrap/Col'
 import "./td_listComponent.css";
 import { FaTrashAlt, FaRegThumbsUp } from 'react-icons/fa';
 
-function ListComponent({props, allowSpan}) {
+function ListComponent({props, allowSpan, deleteTasksLC}) {
+   
+   
+   const [completedTask, setCompletedTask] = useState(false); 
+   
+   
+   
+   
     return (
 
-        // <div className='listComponentDiv'>
-        // <Stack direction='horizontal' gap={5} className='listStack'>
-
-        //     <div>
-        //     <span contentEditable={`${allowSpan ? "true" : "false"}`} className="taskSpan bg-transparent " >{props.text}</span>
-        //     </div>
-
-        //     <Stack direction='horizontal' gap={3}>
-        //         <Button variant="outline-danger" className ='ms-auto' size='sm'>X</Button>
-        //         <Button variant="outline-success" className ='ms-auto' size='sm' >C</Button>
-
-        //     </Stack>
-
-        // </Stack>
-        // </div>
 
         <Container fluid="xs">
-        <Row className="listItemContainer">
+        <Row className={`listItemContainer ${completedTask ? "completedTask" : ""}`}>
             <Col md={10} sm={9} xs={8} className="spanContainer">
                 
                 <span contentEditable={`${allowSpan ? "true" : "false"}`} suppressContentEditableWarning= "true"
-                 className="taskSpan bg-transparent text-white-50 ">
+                 className={`taskSpan bg-transparent ${completedTask ? "completedSpan" : ""} `}>
                     {props.text}
                 </span>
 
             </Col>
             <Col md={2} sm={3} xs={4} className='list_ButtonContainer'>
                 
-                    <Button className='taskButton' size='sm'><FaRegThumbsUp /></Button>
-                    <Button className='taskButton' size='sm'><FaTrashAlt /></Button>
+                    <Button onClick={() => setCompletedTask(!completedTask)} className={`taskButton ${completedTask ? "completedButton" : ""}`} size='sm'><FaRegThumbsUp /></Button>
+                    <Button onClick={() => deleteTasksLC(props.id)} className={`taskButton ${completedTask ? "completedButton" : ""}`} size='sm'><FaTrashAlt /></Button>
                 
             </Col>
          </Row>
@@ -49,3 +41,8 @@ function ListComponent({props, allowSpan}) {
 }
 
 export default ListComponent
+
+
+
+
+// ${completedTask ? "completedSpan" : ""}

@@ -20,13 +20,26 @@
     display: flex;
     justify-content: space-between;
     
+}
 
+.completedTask{
+    border: 1px solid #006D16 ;
 }
 
 /* USE THESE PROPERTIES TO MODIFY THE GRAY MARGIN SURROUNDING EACH TASK */
 .spanContainer {
     margin: 2.5% 0%;
 }
+
+.taskSpan {
+    color: rgba(255, 255, 255 , 0.5)
+}
+
+.completedSpan {
+    color: #006D16;
+}
+
+
 
 .list_ButtonContainer {
     margin: 2.5% 0%;
@@ -37,6 +50,7 @@
     background-color: transparent;
     border: none;
     color: white;
+    user-select: none;
 }
 
 .taskButton:hover {
@@ -44,4 +58,17 @@
     color: #121212;
     border: white;
 }
+
+.taskButton:focus {
+    outline: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.completedButton {
+    color: green;
+}
+
+
+
 

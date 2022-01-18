@@ -20,12 +20,23 @@ function changeShowForm() {
   setShowForm(!showForm);
 }
 
- const updateTasks = (taskId, taskText) => {
+const updateTasks = (taskId, taskText) => {
 
    setAvailableTasks([...availableTasks, {id: taskId, text: taskText
   }]);
   console.log(availableTasks);
- }
+}
+
+const deleteTask = (taskKeyToDelete) => {
+
+  const filteredArray = availableTasks.filter((value) => 
+    value.id !== taskKeyToDelete);
+
+  setAvailableTasks(filteredArray);  
+}
+
+
+
 
 
 
@@ -34,7 +45,7 @@ function changeShowForm() {
       <Title />
 
       <div className="containerDiv">
-      <MainList activateClick={showForm} availableTasks={availableTasks} />
+      <MainList activateClick={showForm} availableTasks={availableTasks} deleteTasks={deleteTask} />
       <AddButton showButton={showForm} change={changeShowForm}/>
       </div>
 
